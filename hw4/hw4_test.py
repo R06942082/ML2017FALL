@@ -20,7 +20,7 @@ for i in range(200000):
 
 print("Word Embedding")
 test_vector = []
-bag = Word2Vec.load("Dictonary_all_2.bin")
+bag = Word2Vec.load("MyDictionary.bin")
 for i in range(len(test)):
     test_vector.append([])
     for j in range(max_length):
@@ -42,8 +42,7 @@ test_vector = np.array(test_vector)
 test_vector = (test_vector-np.mean(test_vector))/np.std(test_vector)  # normalize, x=(x-mean(x))/std(x)
 
 print("loading model")
-#model = load_model("epoch-04_acc-0.820.hdf5")
-model=load_model("epoch-00_acc-0.950.hdf5")
+model = load_model("MyModel.hdf5")
 
 print("predicting")
 result = np.argmax(model.predict(test_vector), axis=1)
