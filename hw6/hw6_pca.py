@@ -1,7 +1,15 @@
 import numpy as np
 from skimage import io
 import sys
+'''
+import os
 
+a=os.path.join(sys.argv[1])
+print(type(a))
+print(len(a))
+print(a)
+print(b)
+'''
 print("reading face")
 row_img = []
 for i in range(415):
