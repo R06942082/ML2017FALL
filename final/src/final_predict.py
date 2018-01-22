@@ -31,7 +31,7 @@ for data in mydata:
 test_voice = np.array(test_voice)
 del mydata
 
-print("Reading"+str(sys.argv[2])+", do w2v and padding")
+print("Reading "+str(sys.argv[2])+", do w2v and padding")
 test_data = pd.read_csv(sys.argv[2], sep=',', encoding='utf-8', header=None).values
 test_data = np.array([[s.rstrip().lstrip().split(" ") for s in options] for options in test_data])
 test_data_vector = np.array([bag_and_padding(test_data[:, i]) for i in range(4)])
@@ -60,7 +60,7 @@ dot_layer = (Dot(1)([voice_output, option_DNN_layer]))
 output = Dense(1, activation='sigmoid')(dot_layer)
 
 model = Model([voice_input, option_input], output)
-model.set_weights(load_model("lib\\epoch-19_val_acc-0.644_real0.443.hdf5").get_weights())
+model.set_weights(load_model("lib/epoch-19_val_acc-0.644_real0.443.hdf5").get_weights())
 
 print("predicting")
 result = []

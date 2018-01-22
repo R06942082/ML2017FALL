@@ -137,7 +137,7 @@ class Word2vec_helper:
 
         return decoded_sentence
 
-bag = KeyedVectors.load("lib\\w2v_model\\chinese_embedding.model")
+bag = KeyedVectors.load("lib/w2v_model/chinese_embedding.model")
 max_seq_length = 13
 
 
